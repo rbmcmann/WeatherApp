@@ -1,25 +1,32 @@
+//@ts-nocheck
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '/environments/environment';
+import { APP_CONFIG } from '../../../environments/environment';
 import { Weather, WeatherData } from '../../models/weather.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WeatherService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getWeatherData(cityName: string): Observable<WeatherData> {
-    return this.http.get<WeatherData>(environment.weatherApiBaseUrl, {
+    console.log(APP_CONFIG);
+    return this.http.get<WeatherData>(APP_CONFIG.weatherApiBaseUrl, {
       headers: new HttpHeaders()
-      .set(environment.XRapidAPIHostHeaderName, environment.XRapidAPIHostHeaderValue)
-      .set(environment.XRapidAPIKeyHeaderName, environment.XRapidAPIKeyHeaderValue),
+        .set(
+          APP_CONFIG.XRapidAPIHostHeaderName,
+          APP_CONFIG.XRapidAPIHostHeaderValue
+        )
+        .set(
+          APP_CONFIG.XRapidAPIKeyHeaderName,
+          APP_CONFIG.XRapidAPIKeyHeaderValue
+        ),
       params: new HttpParams()
-      .set('q', cityName)
-      .set('units', 'metric')
-      .set('mode', 'json')
-    })
+        .set('q', cityName)
+        .set('units', 'metric')
+        .set('mode', 'json'),
+    });
   }
 }

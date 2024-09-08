@@ -2,7 +2,7 @@
   "PAGES": {
       "HOME": {
           "TITLE": "SimpleCast",
-          "GO_TO_DETAIL": "Go to Detail"
+          "GO_TO_LOGIN": "Login"
       },
       "DETAIL": {
         "TITLE": "Detail page !",

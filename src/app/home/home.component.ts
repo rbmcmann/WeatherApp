@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ElectronService } from '../core/services';
 
 @Component({
   selector: 'app-home',
@@ -28,15 +29,16 @@ export class HomeComponent implements OnInit {
     console.log('Window maximized');
   }
 
-  onClose() {
-    // Logic to close window
-    console.log('Window closed');
-  }
-
-  constructor(private router: Router) { }
+  constructor(private electron: ElectronService) { }
 
   ngOnInit(): void {
     console.log('HomeComponent INIT');
+  }
+
+  onClose() {
+    // Logic to close window
+    console.log('Window closed');
+    this.electron.window.close();
   }
 
 }

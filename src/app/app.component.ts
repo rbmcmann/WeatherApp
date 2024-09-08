@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ElectronService } from './core/services';
 import { TranslateService } from '@ngx-translate/core';
 import { APP_CONFIG } from '../environments/environment';
 import { WeatherService } from './core/services/weather.service';
+import { WeatherData } from './models/weather.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(
     private electronService: ElectronService,
     private translate: TranslateService,
@@ -17,6 +18,7 @@ export class AppComponent {
   ) {
     this.translate.setDefaultLang('en');
     console.log('APP_CONFIG', APP_CONFIG);
+    console.log('test');
 
     if (electronService.isElectron) {
       console.log(process.env);
@@ -27,10 +29,15 @@ export class AppComponent {
       console.log('Run in browser');
     }
   }
+
+  weatherData?: WeatherData;
+
   ngOnInit(): void {
-    this.weatherService.getWeatherData('Wellingto').subscribe({
+    this.weatherService.getWeatherData('Wellington')
+    .subscribe({
       next: (response) => {
-        console.log(response)
+        this.weatherData = response;
+        // console.log(response, 'Here')
       }
     })
   }

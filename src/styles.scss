@@ -5,19 +5,22 @@ html, body {
 
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
 }
 
 /* CAN (MUST) BE REMOVED ! Sample Global style */
 .container {
   height: 100%;
-  display: flex;
+  // display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  background: url(./assets/background.jpg) no-repeat center fixed;
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
 
   .title {
     color: white;
@@ -46,5 +49,36 @@ html, body {
       transition: all 0.4s ease 0s;
     }
   }
+  .container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  h1 {
+    color: #000;
+  }
+  
+  .guidelines {
+    margin-top: 20px;
+  }
+  
+  ol {
+    list-style-type: decimal;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  .actions {
+    margin-top: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
 }
 

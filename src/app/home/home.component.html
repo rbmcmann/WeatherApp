@@ -1,7 +1,28 @@
 <div class="container">
-  <h1 class="title">
+  <!-- <h1 class="title">
     {{ 'PAGES.HOME.TITLE' | translate }}
   </h1>
 
+  <a routerLink="/detail">{{ 'PAGES.HOME.GO_TO_DETAIL' | translate }}</a> -->
+ <!-- Title Bar -->
+<div class="title-bar">
+  <div class="app-name">{{ 'PAGES.HOME.TITLE' | translate }}</div>
+  <div class="controls">
+    <button class="btn-settings" (click)="onSettings()"><span class="material-symbols-outlined">settings</span></button>
+    <button class="btn-login" (click)="onLogin()"><span class="material-symbols-outlined">login</span></button>
+    <div class="window-controls">
+      <button class="btn-minimize" (click)="onMinimize()"><span class="material-symbols-outlined">minimize</span></button>
+      <button class="btn-maximize" (click)="onMaximize()"><span class="material-symbols-outlined">check_box_outline_blank</span></button>
+      <button class="btn-close" (click)="onClose()"><span class="material-symbols-outlined">close</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="body-container">
+  <h1>Welcome to {{ 'PAGES.HOME.TITLE' | translate }}</h1>
+  <p>Please login and select a city to view the weather information.</p>
   <a routerLink="/detail">{{ 'PAGES.HOME.GO_TO_DETAIL' | translate }}</a>
+</div>
+
 </div>

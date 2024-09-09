@@ -5,27 +5,27 @@
 This is a Windows desktop application built using Angular 2+, Electron, and NgRx for state management. It allows users to log in using their Google account via OAuth2, fetch weather data for a selected city, and manage app settings (such as the weather API URL and key) using a local SQLite database.
 
 ## Tech Stack
-- **TypeScript**
-- **Angular 2+** (for front-end)
-- **Electron** (for building the desktop app)
-- **NgRx** (for state management)
-- **Axios** (for API calls)
-- **SQLite** (for local database)
-- **OAuth2** (for Google login)
+- TypeScript
+- Angular 2+ (for front-end)
+- Electron (for building the desktop app)
+- NgRx (for state management)
+- Axios (for API calls)
+- SQLite (for local database)
+- OAuth2 (for Google login)
 
 ## Features
-- **Login**: Users can log in using their Google account via OAuth2.
-- **Weather Information**: Users can fetch and view weather information for a selected city.
-- **Settings**: Users can configure the weather API URL and API key, stored in a local SQLite database.
-- **State Management**: NgRx is used for state management of the app's login, settings, and weather data.
-- **Local Storage**: SQLite is used to store user details and app settings.
+- Login: Users can log in using their Google account via OAuth2.
+- Weather Information: Users can fetch and view weather information for a selected city.
+- Settings: Users can configure the weather API URL and API key, stored in a local SQLite database.
+- State Management: NgRx is used for state management of the app's login, settings, and weather data.
+- Local Storage: SQLite is used to store user details and app settings.
 
 ## Installation and Setup
 
 ### Prerequisites
-- **Node.js**: You need to have Node.js installed on your machine. You can download it [here](https://nodejs.org/).
-- **Google OAuth2 Client ID**: Create your OAuth2 credentials by following [this guide](https://developers.google.com/identity/protocols/oauth2).
-- **Weather API Key**: Sign up for a free API key from [WeatherStack](https://weatherstack.com/product) or any other weather API provider.
+- Node.js: You need to have Node.js installed on your machine. You can download it [here](https://nodejs.org/).
+- Google OAuth2 Client ID: Create your OAuth2 credentials by following [this guide](https://developers.google.com/identity/protocols/oauth2).
+- Weather API Key: Sign up for a free API key from [WeatherStack](https://weatherstack.com/product) or any other weather API provider.
 
 ### Clone the Repository
 ```bash
@@ -69,8 +69,8 @@ This will generate an executable file for Windows inside a folder named `weather
 ## Usage
 
 ### Home Screen
-- **Title Bar**: The title bar includes the app name on the left, along with settings and login buttons on the right. The window control buttons (minimize, maximize, close) are on the far right.
-- **Body**: The home screen displays a welcome message and instructions to log in and fetch weather information. Once logged in, users can enter a city name and retrieve weather data by clicking the "Get Weather" button.
+- Title Bar: The title bar includes the app name on the left, along with settings and login buttons on the right. The window control buttons (minimize, maximize, close) are on the far right.
+- Body: The home screen displays a welcome message and instructions to log in and fetch weather information. Once logged in, users can enter a city name and retrieve weather data by clicking the "Get Weather" button.
 
 ### Settings Screen
 - The settings screen allows the user to enter and update the weather API URL and key.
@@ -123,9 +123,9 @@ npm run test
 ```
 
 ### Test Cases
-- **WeatherService Test**: Ensures that the weather data is fetched correctly using the API.
-- **AuthService Test**: Validates the OAuth2 login functionality.
-- **SettingsService Test**: Ensures that the app settings are being saved and retrieved from SQLite properly.
+- WeatherService Test: Ensures that the weather data is fetched correctly using the API.
+- AuthService Test: Validates the OAuth2 login functionality.
+- SettingsService Test: Ensures that the app settings are being saved and retrieved from SQLite properly.
 
 ## Logging
 The app includes basic logging for debugging purposes using `electron-log`. Logs are automatically written to a file in the app's data directory.
@@ -133,13 +133,12 @@ The app includes basic logging for debugging purposes using `electron-log`. Logs
 ## Troubleshooting
 
 ### Common Issues:
-- **Google OAuth2 Login Fails**: Ensure that the `CLIENT_ID` for Google OAuth is correctly set up in the `auth.service.ts`.
-- **Weather Data Not Fetching**: Check that the API URL and key are correctly set in the settings.
-- **Database Not Created**: If the SQLite database is not created, ensure that the `sqlite3` package is properly installed and that Electron has access to the file system.
+- Google OAuth2 Login Fails: Ensure that the `CLIENT_ID` for Google OAuth is correctly set up in the `auth.service.ts`.
+- Weather Data Not Fetching: Check that the API URL and key are correctly set in the settings.
+- Database Not Created: If the SQLite database is not created, ensure that the `sqlite3` package is properly installed and that Electron has access to the file system.
 
 ## Contributing
 Feel free to submit issues, pull requests, or suggestions to improve the app.
 
 ## License
 This project is licensed under the MIT License.
-```

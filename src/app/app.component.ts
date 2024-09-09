@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   ) {
     this.translate.setDefaultLang('en');
     console.log('APP_CONFIG', APP_CONFIG);
-    console.log('test');
 
     if (electronService.isElectron) {
       console.log(process.env);
@@ -30,14 +29,14 @@ export class AppComponent implements OnInit {
     }
   }
 
-  weatherData?: WeatherData;
+  weatherData: WeatherData;
 
   ngOnInit(): void {
-    this.weatherService.getWeatherData('Wellington')
+    this.weatherService.getWeatherData('Denver')
     .subscribe({
       next: (response) => {
         this.weatherData = response;
-        // console.log(response, 'Here')
+        console.log(response)
       }
     })
   }
